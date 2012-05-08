@@ -1,5 +1,7 @@
 package com.arm.nimbus.collab.server.model;
 
+import com.google.code.morphia.annotations.Entity;
+
 import javax.validation.constraints.NotNull;
 
 /**
@@ -7,8 +9,10 @@ import javax.validation.constraints.NotNull;
  *
  * @creator victor
  */
+@Entity
 public class User extends PersistentEntity{
 
+    //TODO Controller must check if the username is unique or not
     @NotNull
     String username;
 

@@ -1,5 +1,6 @@
 package com.arm.nimbus.collab.server.model;
 
+import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Version;
 import com.google.code.morphia.annotations.Id;
 import org.bson.types.ObjectId;
@@ -10,6 +11,7 @@ import org.bson.types.ObjectId;
  *
  * @creator victor
  */
+@Entity
 public class PersistentEntity {
 
     /**

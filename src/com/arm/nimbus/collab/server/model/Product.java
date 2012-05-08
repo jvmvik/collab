@@ -1,5 +1,8 @@
 package com.arm.nimbus.collab.server.model;
 
+import com.arm.nimbus.collab.client.model.ProductProxy;
+import com.google.code.morphia.annotations.Entity;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 
@@ -8,7 +11,8 @@ import javax.validation.constraints.Null;
  *
  * @creator victor
  */
-public class Product extends PersistentEntity {
+@Entity
+public class Product extends PersistentEntity implements ProductProxy {
 
     // Product name
     @NotNull
@@ -22,18 +26,22 @@ public class Product extends PersistentEntity {
         super();
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public String getCode() {
         return code;
     }
 
+    @Override
     public void setCode(String code) {
         this.code = code;
     }
