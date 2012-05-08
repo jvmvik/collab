@@ -1,4 +1,4 @@
-package com.arm.nimbus.collab.shared;
+package com.arm.nimbus.collab.shared.noorm;
 
 import java.util.List;
 

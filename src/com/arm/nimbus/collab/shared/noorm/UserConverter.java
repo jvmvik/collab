@@ -1,15 +1,15 @@
-package com.arm.nimbus.collab.shared;
+package com.arm.nimbus.collab.shared.noorm;
 
-import com.arm.nimbus.collab.client.domain.User;
 import com.google.gwt.core.client.GWT;
 import com.google.web.bindery.autobean.shared.AutoBean;
 import com.google.web.bindery.autobean.shared.AutoBeanCodex;
 import com.google.web.bindery.autobean.shared.AutoBeanUtils;
+import com.arm.nimbus.collab.server.model.User;
 
 public class UserConverter {
 	// Instantiate the factory
 	DomainFactory factory = GWT.create(DomainFactory.class);
-	
+	     /*
 	User makeUser(){
 		AutoBean<User> user = factory.user();
 		return user.as();
@@ -24,5 +24,5 @@ public class UserConverter {
 		AutoBean<User> bean = AutoBeanCodex.decode(factory, User.class, json);
 		return bean.as();
 	}
-		  
+	*/
 }

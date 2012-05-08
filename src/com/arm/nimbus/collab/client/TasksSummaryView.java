@@ -3,14 +3,13 @@ package com.arm.nimbus.collab.client;
 import java.util.List;
 import java.util.logging.Logger;
 
-import com.arm.nimbus.collab.client.domain.Task;
-import com.arm.nimbus.collab.client.domain.User;
+import com.arm.nimbus.collab.server.model.Task;
+import com.arm.nimbus.collab.server.model.User;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
@@ -58,7 +57,7 @@ public class TasksSummaryView extends Composite implements HasText {
 	    TextColumn<Task> authorColumn = new TextColumn<Task>() {
 	      @Override
 	      public String getValue(Task task) {
-	        return task.getAuthor().getUsername();
+	        return task.getUser().getUsername();
 	      }
 	    };
 
@@ -75,7 +74,13 @@ public class TasksSummaryView extends Composite implements HasText {
 	    // Add the data to the data provider, which automatically pushes it to the
 	    // widget.
 	    List<Task> list = dataProvider.getList();
-	    list.add(new Task("task 1", new User("vicben01")));
+
+        Task t = new Task();
+        User u = new User();
+        u.setUsername("victor");
+        u.setRole("developer");
+        t.setUser(u);
+	    list.add(t);
 
 	}
 
