@@ -14,7 +14,7 @@ Technologies
 
 GWT 2.4
 -------
-Framework for the server side.
+Framework to build advanced web application in java.
 
 GIN
 ---
@@ -30,6 +30,24 @@ Morphia
 ----
 ORM like for mongoDB.
 http://code.google.com/p/morphia
+
+Testing
+----
+
+JUnit 4.10
+------
+Excellent java testing framework
+http://junit.org
+
+Mockito
+-----
+Mock object on the server side.
+http://code.google.com/p/mockito/
+
+Power Mockito
+-----
+Mock the not-mocketable !
+http://code.google.com/p/powermock
 
 Framework underline.
 --------

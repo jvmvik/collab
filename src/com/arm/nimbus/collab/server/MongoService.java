@@ -32,7 +32,7 @@ public class MongoService {
 		
 		Mongo m = null;
 		try {
-			m = new Mongo( "localhost" );
+			m = new Mongo( "localhost", 27017);
 		} catch (UnknownHostException e) {
 			log.log(Level.SEVERE, e.getMessage());
 			e.printStackTrace();			
