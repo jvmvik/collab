@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
  *
  * @creator victor
  */
-public class Review extends PersistentEntity implements ReviewProxy {
+public class Review extends PersistentEntity {
 
     // Related to a task
     @NotNull
@@ -26,43 +26,34 @@ public class Review extends PersistentEntity implements ReviewProxy {
 
     // TODO createdDate, updateDate
 
-
-    @Override
     public String getTaskID() {
         return taskID;
     }
 
-    @Override
     public void setTaskID(String taskID) {
         this.taskID = taskID;
     }
 
-    @Override
     public String getUsername() {
         return username;
     }
 
-    @Override
     public void setUsername(String username) {
         this.username = username;
     }
 
-    @Override
     public String getStatus() {
         return status;
     }
 
-    @Override
     public void setStatus(String status) {
         this.status = status;
     }
 
-    @Override
     public String getNote() {
         return note;
     }
 
-    @Override
     public void setNote(String note) {
         this.note = note;
     }

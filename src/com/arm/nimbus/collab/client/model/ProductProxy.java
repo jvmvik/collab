@@ -9,12 +9,12 @@ import com.google.web.bindery.requestfactory.shared.ProxyFor;
  * @creator victor
  */
 @ProxyFor(Product.class)
-public interface ProductProxy {
-    String getName();
+public interface ProductProxy extends AbstractEntityProxy {
 
+    String getName();
     void setName(String name);
 
     String getCode();
-
     void setCode(String code);
+
 }

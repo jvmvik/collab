@@ -5,7 +5,7 @@ import com.arm.nimbus.collab.server.model.User;
 import com.google.web.bindery.requestfactory.shared.ProxyFor;
 
 @ProxyFor(Task.class)
-public interface TaskProxy {
+public interface TaskProxy extends AbstractEntityProxy {
 
 	public String getTitle();
 	public void setTitle(String title);
@@ -16,6 +16,9 @@ public interface TaskProxy {
 	public String getStatus();
 	public void setStatus(String status);
 	
-	public User getUser();
-	public void setUser(User User);
+	public UserProxy getUser();
+	public void setUser(UserProxy User);
+
+    public String getProductID();
+    public void setProductID(String productID);
 }

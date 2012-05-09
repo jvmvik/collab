@@ -48,4 +48,11 @@ public class TaskUnitTest {
         t.setUser(user);
         Assert.assertEquals(user, t.getUser());
     }
+
+    @Test
+    public void productID(){
+        String productID = "xpxososdaopasd";
+        t.setProductID(productID);
+        Assert.assertEquals(productID, t.getProductID());
+    }
 }

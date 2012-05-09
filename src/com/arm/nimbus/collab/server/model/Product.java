@@ -1,10 +1,12 @@
 package com.arm.nimbus.collab.server.model;
 
 import com.arm.nimbus.collab.client.model.ProductProxy;
+import com.arm.nimbus.collab.server.EntityManager;
 import com.google.code.morphia.annotations.Entity;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
+import java.util.List;
 
 /**
  * TODO description
@@ -12,36 +14,31 @@ import javax.validation.constraints.Null;
  * @creator victor
  */
 @Entity
-public class Product extends PersistentEntity implements ProductProxy {
+public class Product extends PersistentEntity {
 
     // Product name
     @NotNull
     String name;
 
     // A product code (version, SAP ID)
-    @Null
     String code;
 
     public Product() {
         super();
     }
 
-    @Override
     public String getName() {
         return name;
     }
 
-    @Override
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
     public String getCode() {
         return code;
     }
 
-    @Override
     public void setCode(String code) {
         this.code = code;
     }
@@ -52,7 +49,19 @@ public class Product extends PersistentEntity implements ProductProxy {
      * @return
      */
     public static Product findById(String id){
-        //TODO Implement
-        return new Product();
+        return  EntityManager.getInstance().getDs().find(Product.class, "id", id).get();
+    }
+
+    public static List<Product> findAllProducts(){
+        return EntityManager.getInstance().getDs().find(Product.class).asList();
+    }
+
+    public Product persist() {
+        EntityManager.getInstance().persist(this);
+        return this;
+    }
+
+    public void remove() {
+        EntityManager.getInstance().getDs().delete(this);
     }
 }

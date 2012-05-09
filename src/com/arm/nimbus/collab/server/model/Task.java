@@ -10,6 +10,9 @@ import java.util.List;
 public class Task extends PersistentEntity {
 
     @NotNull
+    String productID;
+
+    @NotNull
     String title;
 
     @NotNull
@@ -53,6 +56,14 @@ public class Task extends PersistentEntity {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+    public String getProductID() {
+        return productID;
+    }
+
+    public void setProductID(String productID) {
+        this.productID = productID;
+    }
 
     /***
      * Find all task related to a user

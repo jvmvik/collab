@@ -9,7 +9,7 @@ import com.google.web.bindery.requestfactory.shared.ProxyFor;
  * @creator victor
  */
 @ProxyFor(Review.class)
-public interface ReviewProxy {
+public interface ReviewProxy extends AbstractEntityProxy {
 
     String getTaskID();
 
