@@ -4,17 +4,19 @@
     <inherits name='com.google.gwt.user.User'/>
     <inherits name="com.google.gwt.http.HTTP"/>
 
-    <!-- Inherit the default GWT style sheet.  You can change       -->
-    <!-- the theme of your GWT application by uncommenting          -->
-    <!-- any one of the following lines.                            -->
+    <!-- TODO Use BootStrap GWT-->
     <inherits name='com.google.gwt.user.theme.clean.Clean'/>
 
     <!-- Specify the app entry point class.                         -->
     <entry-point class='com.arm.nimbus.collab.client.Collab'/>
 
-    <!-- -->
+    <!-- GIN / Guice injection -->
     <inherits name="com.google.gwt.inject.Inject"/>
+    
+    <!-- RequestFactory API -->
     <inherits name="com.google.web.bindery.requestfactory.RequestFactory"/>
+    
+    <!-- 2.5 Fancy API -->
     <inherits name="com.google.gwt.activity.Activity"/>
     <inherits name="com.google.gwt.place.Place"/>
     <inherits name="com.google.gwt.editor.Editor"/>

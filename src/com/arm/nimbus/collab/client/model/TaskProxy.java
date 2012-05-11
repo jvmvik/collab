@@ -16,8 +16,8 @@ public interface TaskProxy extends AbstractEntityProxy {
 	public String getStatus();
 	public void setStatus(String status);
 	
-	public UserProxy getUser();
-	public void setUser(UserProxy User);
+	public String getUserID();
+	public void setUserID(String User);
 
     public String getProductID();
     public void setProductID(String productID);

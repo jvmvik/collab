@@ -45,8 +45,8 @@ public class TaskUnitTest {
     public void user() throws Exception {
         User user = new User();
         user.setUsername("hello");
-        t.setUser(user);
-        Assert.assertEquals(user, t.getUser());
+        t.setUserID(user.getId());
+        Assert.assertEquals(user, t.getUserID());
     }
 
     @Test

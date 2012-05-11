@@ -26,10 +26,8 @@ public class EntityManager {
         try {
             mongo = new Mongo();
         } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (MongoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -91,7 +89,7 @@ public class EntityManager {
 
         // Associate one task to this product
         Task task = new Task();
-        task.setUser(user);
+        task.setUserID(user.getId());
         task.setProductID(p.getId());
         task.setTitle("Task 1");
         task.setContent("Explanation formatted as HTML <ul><li>Subtask 1</li><li>Subtask 2</li></ul>");

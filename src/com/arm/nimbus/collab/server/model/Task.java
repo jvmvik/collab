@@ -21,8 +21,8 @@ public class Task extends PersistentEntity {
     @NotNull
     String status;   // Free status
 
-    @Embedded
-    User user;       // Owner of the task
+    @NotNull
+    String userID;       // Owner of the task
 
     public Task(){
         super();
@@ -50,11 +50,11 @@ public class Task extends PersistentEntity {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public User getUser() {
-		return this.user;
+	public String getUserID() {
+		return this.userID;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 
     public String getProductID() {
@@ -70,7 +70,7 @@ public class Task extends PersistentEntity {
      * @param user
      * @return
      */
-    public static List<Task> findByUser(User user){
+    public static List<Task> findByUser(String userID){
         return null;
     }
 
