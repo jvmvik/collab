@@ -1,0 +1,7 @@
+.apt_generated/
+gwt-unitCache/
+test-classes/
+war/WEB-INF/classes/
+war/WEB-INF/deploy/
+war/collab/
+
