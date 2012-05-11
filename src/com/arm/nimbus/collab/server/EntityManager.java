@@ -16,10 +16,19 @@ import java.util.logging.Logger;
  */
 public class EntityManager {
 
+	// Build the logger
     Logger log = Logger.getLogger(EntityManager.class.getName());
+    
+    // Create local instance for the EntityManager
     private static final EntityManager localInstance = new EntityManager();
+    
+    // Mongo db driver
     private Mongo mongo;
+    
+    // Preset the datastore
     private Datastore ds;
+    
+    // ORM for mongo is morphia
     private Morphia morphia;
 
     private EntityManager() {
@@ -32,6 +41,7 @@ public class EntityManager {
         }
 
         try {
+        	// Configure the ORM
             morphia = new Morphia();
 
             morphia.map(User.class);
@@ -39,7 +49,10 @@ public class EntityManager {
             morphia.map(Task.class);
             morphia.map(Review.class);
 
+            // Create database for development
             ds = morphia.createDatastore(mongo, "collab_dev");
+            
+            // Delete database content if exists
             ds.delete(ds.createQuery(User.class));
             ds.delete(ds.createQuery(Product.class));
             ds.delete(ds.createQuery(Task.class));
@@ -49,6 +62,7 @@ public class EntityManager {
         } catch (Exception ex) {
             ex.printStackTrace(System.out);
         }
+        
         System.out.println("Datastore created");
         log.info("Datastore created");
 
