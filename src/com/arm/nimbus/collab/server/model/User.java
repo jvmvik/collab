@@ -1,5 +1,6 @@
 package com.arm.nimbus.collab.server.model;
 
+import com.arm.nimbus.collab.server.EntityManager;
 import com.google.code.morphia.annotations.Entity;
 
 import javax.validation.constraints.NotNull;
@@ -37,5 +38,9 @@ public class User extends PersistentEntity{
 
     public void setRole(String role) {
         this.role = role;
+    }
+    
+    public static User findUser(String id){
+    	return EntityManager.getInstance().getDs().find(User.class, "id", id).get();
     }
 }

@@ -1,5 +1,6 @@
 package com.arm.nimbus.collab.server.model;
 
+import com.arm.nimbus.collab.server.EntityManager;
 import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 
@@ -72,6 +73,10 @@ public class Task extends PersistentEntity {
      */
     public static List<Task> findByUser(String userID){
         return null;
+    }
+    
+    public static Task findTask(String id){
+    	return EntityManager.getInstance().getDs().find(Task.class, "id", id).get();
     }
 
 }

@@ -64,4 +64,14 @@ public class Product extends PersistentEntity {
     public void remove() {
         EntityManager.getInstance().getDs().delete(this);
     }
+    
+    /**
+     * This field is mandatory !
+     * http://stackoverflow.com/questions/6295567/gwt-app-cannot-find-matching-method-from-my-requestcontext-interface
+     * @param id
+     * @return
+     */
+    public static Product findProduct(String id) {
+		return EntityManager.getInstance().getDs().find(Product.class, "id", id).get();
+	}
 }

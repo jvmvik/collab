@@ -1,6 +1,7 @@
 package com.arm.nimbus.collab.server.model;
 
 import com.arm.nimbus.collab.client.model.ReviewProxy;
+import com.arm.nimbus.collab.server.EntityManager;
 
 import javax.validation.constraints.NotNull;
 
@@ -57,4 +58,8 @@ public class Review extends PersistentEntity {
     public void setNote(String note) {
         this.note = note;
     }
+    
+    public static Review findReview(String id) {
+		return EntityManager.getInstance().getDs().find(Review.class, "id", id).get();
+	}
 }
