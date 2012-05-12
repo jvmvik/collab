@@ -4,11 +4,8 @@
     <inherits name='com.google.gwt.user.User'/>
     <inherits name="com.google.gwt.http.HTTP"/>
 
-    <!-- BootStrap GWT-->
+    <!-- BootStrap for GWT-->
     <inherits name='com.github.gwtbootstrap.Bootstrap'/>
-
-    <!-- Specify the app entry point class.                         -->
-    <entry-point class='com.arm.nimbus.collab.client.Collab'/>
 
     <!-- GIN / Guice injection -->
     <inherits name="com.google.gwt.inject.Inject"/>
@@ -21,9 +18,11 @@
     <inherits name="com.google.gwt.place.Place"/>
     <inherits name="com.google.gwt.editor.Editor"/>
 
-
     <!-- Specify the paths for translatable code                    -->
     <source path='client'/>
     <source path='shared'/>
+
+    <!-- Specify the app entry point class.                         -->
+    <entry-point class='com.arm.nimbus.collab.client.Collab'/>
 
 </module>
