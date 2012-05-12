@@ -10,5 +10,5 @@ import com.google.gwt.place.shared.WithTokenizers;
  * @creator victor
  */
 @WithTokenizers({DashboardPlace.Tokenizer.class})
-public interface ApplicationHistoryMapper extends PlaceHistoryMapper{
+public interface CollabHistoryMapper extends PlaceHistoryMapper{
 }

@@ -7,14 +7,13 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
-import org.omg.CORBA.portable.ApplicationException;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Collab implements EntryPoint {
 
-    private final ApplicationGinInjector injector = GWT.create(ApplicationGinInjector.class);
+    private final CollabGinInjector injector = GWT.create(CollabGinInjector.class);
     private SimplePanel appWidget = new SimplePanel();
 
 	/**
@@ -27,7 +26,7 @@ public class Collab implements EntryPoint {
         activityManager.setDisplay(appWidget);
 
         // Start PlaceHistoryHandler with our PlaceHistoryMapper
-        ApplicationHistoryMapper historyMapper = GWT.create(ApplicationHistoryMapper.class);
+        CollabHistoryMapper historyMapper = GWT.create(CollabHistoryMapper.class);
         PlaceHistoryHandler historyHandler = new PlaceHistoryHandler(historyMapper);
 
         RootPanel.get().add(appWidget);

@@ -6,9 +6,7 @@ import com.arm.nimbus.collab.client.dashboard.DashboardView;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
-import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
-import com.google.inject.Singleton;
 import com.google.gwt.event.shared.EventBus;
 
 /**
@@ -19,8 +17,8 @@ import com.google.gwt.event.shared.EventBus;
  *
  * @creator victor
  */
-@GinModules(ApplicationGinModule.class)
-public interface ApplicationGinInjector extends Ginjector {
+@GinModules(CollabGinModule.class)
+public interface CollabGinInjector extends Ginjector {
 
     EventBus getEventBus();
 

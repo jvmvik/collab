@@ -17,13 +17,13 @@ import com.google.gwt.event.shared.EventBus;
  *
  * @creator victor
  */
-public abstract class ApplicationAbstractActivity extends AbstractActivity {
+public abstract class CollabAbstractActivity extends AbstractActivity {
 
     private ApplicationRequestFactory rf;
     protected PlaceController placeController;
     protected ApplicationPlace place;
 
-    public ApplicationAbstractActivity(PlaceController placeController, ApplicationPlace place) {
+    public CollabAbstractActivity(PlaceController placeController, ApplicationPlace place) {
         this.placeController = placeController;
         this.place = place;
     }

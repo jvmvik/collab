@@ -21,7 +21,7 @@ import com.google.inject.Singleton;
  *
  * @creator victor
  */
-public class ApplicationGinModule extends AbstractGinModule {
+public class CollabGinModule extends AbstractGinModule {
 
     @Override
     protected void configure(){
@@ -32,7 +32,7 @@ public class ApplicationGinModule extends AbstractGinModule {
         bind(PlaceController.class).to(InjectablePlaceController.class).in(Singleton.class);
 
         // inject activity mapper
-        bind(ActivityMapper.class).to(ApplicationActivityMapper.class).in(Singleton.class);
+        bind(ActivityMapper.class).to(CollabActivityMapper.class).in(Singleton.class);
 
         // dashboard
         bind(DashboardView.class).to(DashboardViewImpl.class).in(Singleton.class);

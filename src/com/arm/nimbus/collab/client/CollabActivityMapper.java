@@ -18,7 +18,7 @@ import com.google.gwt.event.shared.EventBus;
  *
  * @creator victor
  */
-public class ApplicationActivityMapper implements ActivityMapper {
+public class CollabActivityMapper implements ActivityMapper {
 
     @Inject
     private PlaceController placeController;

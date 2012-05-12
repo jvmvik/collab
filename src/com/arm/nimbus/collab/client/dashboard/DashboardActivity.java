@@ -1,6 +1,6 @@
 package com.arm.nimbus.collab.client.dashboard;
 
-import com.arm.nimbus.collab.client.ApplicationAbstractActivity;
+import com.arm.nimbus.collab.client.CollabAbstractActivity;
 import com.arm.nimbus.collab.client.model.ProductProxy;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @creator victor
  */
-public class DashboardActivity extends ApplicationAbstractActivity {
+public class DashboardActivity extends CollabAbstractActivity {
 
     private DashboardView dashboardView;
 
