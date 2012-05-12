@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g='urn:import:com.google.gwt.user.client.ui'
+        xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'>
+    <g:HTMLPanel>
+        <b:ResponsiveNavbar position="TOP">
+            <b:Brand>Collab</b:Brand>
+            <b:NavCollapse>
+                <b:Nav>
+                    <b:NavLink>Product</b:NavLink>
+                    <b:NavLink>My tasks</b:NavLink>
+                </b:Nav>
+
+                <b:Nav alignment="RIGHT">
+                    <b:NavSearch size="2" placeholder="Search" alignment="RIGHT" />
+                    <b:NavWidget icon="BOOK" iconColor="WHITE" text="Inbox"
+                                 ui:field="Notification" >
+                        <b:Badge>1</b:Badge>
+                    </b:NavWidget>
+                </b:Nav>
+            </b:NavCollapse>
+        </b:ResponsiveNavbar>
+    </g:HTMLPanel>
+</ui:UiBinder>
