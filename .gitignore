@@ -4,4 +4,11 @@ test-classes/
 war/WEB-INF/classes/
 war/WEB-INF/deploy/
 war/collab/
+out/
+target/
+.idea/
+.classpath
+.factorypath
+coverage.ec
+collab.iml
 
