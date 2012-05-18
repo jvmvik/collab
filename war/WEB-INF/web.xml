@@ -25,6 +25,18 @@
         <url-pattern>/gwtRequest</url-pattern>
     </servlet-mapping>
 
+    <!-- Auth service simulation -->
+    <servlet>
+        <servlet-name>authService</servlet-name>
+        <servlet-class>com.arm.nimbus.collab.server.AuthServlet</servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>authService</servlet-name>
+        <url-pattern>/auth/*</url-pattern>
+    </servlet-mapping>
+
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Collab.html</welcome-file>
