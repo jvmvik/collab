@@ -94,8 +94,9 @@ public class EntityManager {
 
         // Create a product
         Product p = new Product();
-        p.setName("product1");
+        p.setName("Product number one");
         p.setCode("nimbus");
+        p.setOwner(user.getUsername());
 
         persist(p);
 

@@ -42,6 +42,13 @@ public class ProductUnitTest{
         p.setCode(code);
         Assert.assertEquals(code, p.getCode());
     }
+    
+    @Test
+    public void owner() throws Exception {
+        String owner = "good";
+        p.setOwner(owner);
+        Assert.assertEquals(owner, p.getOwner());
+    }
 
     @Test
     public void isPersistentEntity(){
@@ -50,13 +57,12 @@ public class ProductUnitTest{
         Assert.assertNull(entity.getVersion());
     }
 
-    @Test
     /*
      * Mock a static method.
      * Really new way of testing your java.
      * @doc http://code.google.com/p/powermock/wiki/MockitoUsage
      */
-
+    @Test
     public void findByID(){
         PowerMockito.mockStatic(Product.class);
         Mockito.when(Product.findById("id")).thenReturn(new Product());

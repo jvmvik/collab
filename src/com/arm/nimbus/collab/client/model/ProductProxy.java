@@ -17,4 +17,6 @@ public interface ProductProxy extends AbstractEntityProxy {
     String getCode();
     void setCode(String code);
 
+    String getOwner();
+    void setOwner(String username);
 }

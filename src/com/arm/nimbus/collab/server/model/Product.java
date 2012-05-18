@@ -22,6 +22,9 @@ public class Product extends PersistentEntity {
 
     // A product code (version, SAP ID)
     String code;
+    
+    @NotNull
+    String owner; // project owner name
 
     public Product() {
         super();
@@ -43,7 +46,15 @@ public class Product extends PersistentEntity {
         this.code = code;
     }
 
-    /***
+    public String getOwner() {
+		return owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	/***
      * Find a product
      * @param id
      * @return
