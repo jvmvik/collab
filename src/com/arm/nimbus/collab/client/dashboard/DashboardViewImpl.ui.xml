@@ -1,9 +1,17 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
-             xmlns:c='urn:import:com.google.gwt.user.cellview.client'>
-    <g:HTMLPanel>
-        <h2>Product list</h2>
-        <c:CellList ui:field="productList"/>
-        <div class="clearfix"></div>
-    </g:HTMLPanel>
+             xmlns:c='urn:import:com.google.gwt.user.cellview.client'
+             xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:e="urn:import:com.arm.nimbus.collab.client.editor">
+    <b:FluidContainer>
+        <b:Row>
+            <b:Column size="3">
+                <b:Heading size="2">Product</b:Heading>
+                <c:CellList ui:field="productList"/>
+            </b:Column>
+            <b:Column size="9">
+				<e:TaskEditor ui:field="taskEditor"></e:TaskEditor>
+            </b:Column>
+        </b:Row>
+    </b:FluidContainer>
 </ui:UiBinder>

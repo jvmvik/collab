@@ -1,19 +1,23 @@
 package com.arm.nimbus.collab.client.dashboard;
 
+import com.arm.nimbus.collab.client.editor.TaskEditor;
 import com.arm.nimbus.collab.client.model.ProductProxy;
+import com.arm.nimbus.collab.client.sdk.editor.AbstractNimbusEditor.EditorMode;
+import com.github.gwtbootstrap.client.ui.FluidContainer;
 import com.google.gwt.cell.client.AbstractCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellList;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.view.client.HasData;
+import com.google.gwt.view.client.SelectionChangeEvent;
+import com.google.gwt.view.client.SelectionChangeEvent.Handler;
+import com.google.gwt.view.client.SingleSelectionModel;
 import com.google.inject.Inject;
 
 /**
@@ -29,6 +33,9 @@ public class DashboardViewImpl extends Composite implements DashboardView {
     @Inject
     PlaceController placeController;
 
+    @UiField
+    TaskEditor taskEditor;
+    
     @Override
     public HasData<ProductProxy> getProducts() {
         return productList ;
@@ -39,14 +46,34 @@ public class DashboardViewImpl extends Composite implements DashboardView {
         return this;
     }
 
-    interface DashboardViewImplUiBinder extends UiBinder<HTMLPanel, DashboardViewImpl>{
+    interface DashboardViewImplUiBinder extends UiBinder<FluidContainer, DashboardViewImpl>{
     }
 
     private static DashboardViewImplUiBinder ourUiBinder = GWT.create(DashboardViewImplUiBinder.class);
 
     public DashboardViewImpl() {
-        HTMLPanel panel = ourUiBinder.createAndBindUi(this);
+        FluidContainer panel = ourUiBinder.createAndBindUi(this);
         initWidget(panel);
+        
+        // Event
+        Label label = new Label("No product available");
+        productList.setEmptyListWidget(label);
+        
+        final SingleSelectionModel<ProductProxy> selectionModel = new SingleSelectionModel<ProductProxy>();
+		productList.setSelectionModel(selectionModel);
+		selectionModel.addSelectionChangeHandler(new Handler() {
+			
+			@Override
+			public void onSelectionChange(SelectionChangeEvent event) {
+				ProductProxy product = selectionModel.getSelectedObject();
+				if(product == null){
+					taskEditor.setVisible(false);
+				}else{
+					taskEditor.setEditMode(EditorMode.EDIT);
+				}
+			}
+		});
+        
     }
 
     @UiField
@@ -66,7 +93,6 @@ public class DashboardViewImpl extends Composite implements DashboardView {
          */
 
         public ProductCell() {
-
         }
 
         @Override
@@ -75,10 +101,15 @@ public class DashboardViewImpl extends Composite implements DashboardView {
             if (value == null) {
                 return;
             }
-
-            sb.appendHtmlConstant("<div>");
-            sb.appendEscaped(value.getName());
-            sb.appendHtmlConstant("</div>");
+            
+            String s = "<div class=\"alert alert-block alert-info\">" +
+            		"<a class=\"close\" data-dismiss=\"alert\">×</a>" +
+            		"<h4 class=\"alert-heading\">" + value.getName() + "<small></small></h4>"+
+            		"<p>Owner: " + value.getOwner() + "<br/>" +
+            		"Code: " + value.getCode() + "</p></div>";
+            
+            sb.appendHtmlConstant(s);
+            
         }
     }
 }
