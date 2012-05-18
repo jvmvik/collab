@@ -8,15 +8,15 @@
             <b:Brand>Collab</b:Brand>
             <b:NavCollapse>
                 <b:Nav>
-                    <b:NavLink>Product</b:NavLink>
-                    <b:NavLink>My tasks</b:NavLink>
+                    <b:NavLink ui:field="product">Product</b:NavLink>
+                    <b:NavLink ui:field="tasks">My tasks</b:NavLink>
                 </b:Nav>
 
                 <b:Nav alignment="RIGHT">
                     <b:NavSearch size="2" placeholder="Search" alignment="RIGHT" />
-                    <b:NavWidget icon="BOOK" iconColor="WHITE" text="Inbox"
+                    <b:NavWidget icon="ENVELOPE" iconColor="WHITE" text="Inbox"
                                  ui:field="Notification" >
-                        <b:Badge>1</b:Badge>
+                        <b:Badge ui:field="number">1</b:Badge>
                     </b:NavWidget>
                 </b:Nav>
             </b:NavCollapse>
