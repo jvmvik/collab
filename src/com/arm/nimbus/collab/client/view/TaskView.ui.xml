@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:c='urn:import:com.google.gwt.user.cellview.client'
+             xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:e="urn:import:com.arm.nimbus.collab.client.editor">
+    <b:FluidContainer>
+        <b:Row>
+            <b:Column size="12">
+            </b:Column>
+        </b:Row>
+         <b:Row>
+            <b:Column size="12">
+            </b:Column>
+        </b:Row>
+    </b:FluidContainer>
+</ui:UiBinder>
