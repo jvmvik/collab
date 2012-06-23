@@ -39,7 +39,7 @@ public class Collab implements EntryPoint {
         // Display an empty menu
         RootPanel.get().add(ui());
 
-        historyHandler.register(injector.getPlaceController(), injector.getEventBus(), injector.getDashboardPlace());
+        historyHandler.register(injector.getPlaceController(), injector.getEventBus(), injector.getTaskBoardPlace());
         historyHandler.handleCurrentHistory();;
 	}
 

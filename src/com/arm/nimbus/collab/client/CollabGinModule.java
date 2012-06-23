@@ -3,6 +3,10 @@ package com.arm.nimbus.collab.client;
 import com.arm.nimbus.collab.client.dashboard.DashboardPlace;
 import com.arm.nimbus.collab.client.dashboard.DashboardView;
 import com.arm.nimbus.collab.client.dashboard.DashboardViewImpl;
+import com.arm.nimbus.collab.client.editor.TaskBoard;
+import com.arm.nimbus.collab.client.editor.TaskBoardPlace;
+import com.arm.nimbus.collab.client.editor.TaskBoardView;
+import com.arm.nimbus.collab.client.editor.TaskEditor;
 import com.arm.nimbus.collab.client.requests.InjectablePlaceController;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.event.shared.EventBus;
@@ -36,8 +40,13 @@ public class CollabGinModule extends AbstractGinModule {
 
         // dashboard
         bind(DashboardView.class).to(DashboardViewImpl.class).in(Singleton.class);
-
         bind(DashboardPlace.class);
+
+        // Taskboard
+        bind(TaskBoardView.class).to(TaskBoard.class).in(Singleton.class);
+        bind(TaskBoardPlace.class);
+
+        bind(TaskEditor.class).in(Singleton.class);
     }
 
 }

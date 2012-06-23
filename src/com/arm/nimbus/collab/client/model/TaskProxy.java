@@ -21,4 +21,5 @@ public interface TaskProxy extends AbstractEntityProxy {
 
     public String getProductID();
     public void setProductID(String productID);
+
 }

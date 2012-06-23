@@ -8,9 +8,11 @@
 		<b:FluidContainer>
 			<b:Row>
 				<b:Column size="3">
+                    <b:Label>Task list :</b:Label>
 					<c:CellList ui:field="list"/>
 				</b:Column>
 				<b:Column size="5">
+                    <b:Label>Editor :</b:Label>
 					<e:TaskEditor ui:field="editor"/>
 				</b:Column>
 			</b:Row>

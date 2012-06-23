@@ -12,4 +12,5 @@ public interface ApplicationRequestFactory extends RequestFactory {
     //TODO List requests
     public ProductRequest productRequest();
 
+    public TaskRequest taskRequest();
 }

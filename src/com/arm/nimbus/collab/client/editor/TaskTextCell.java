@@ -7,8 +7,8 @@ import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 public class TaskTextCell extends AbstractCell<TaskProxy>{
 
 	@Override
-	public void render(Context context, TaskProxy value, SafeHtmlBuilder sb) {
-		sb.appendEscaped(value.getId()  + " - " + value.getTitle());
+	public void render(Context context, TaskProxy task, SafeHtmlBuilder sb) {
+		sb.appendEscaped(task.getTitle() + " " + task.getStatus());
 	}
 
 }

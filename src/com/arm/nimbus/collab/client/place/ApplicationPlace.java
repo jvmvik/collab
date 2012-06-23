@@ -2,9 +2,6 @@ package com.arm.nimbus.collab.client.place;
 
 import com.google.gwt.place.shared.Place;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * TODO description
  * Common parent class for place.

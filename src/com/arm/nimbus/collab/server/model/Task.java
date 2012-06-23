@@ -1,5 +1,6 @@
 package com.arm.nimbus.collab.server.model;
 
+import com.arm.nimbus.collab.client.model.TaskProxy;
 import com.arm.nimbus.collab.server.EntityManager;
 import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
@@ -68,7 +69,7 @@ public class Task extends PersistentEntity {
 
     /***
      * Find all task related to a user
-     * @param user
+     * @param userID
      * @return
      */
     public static List<Task> findByUser(String userID){
@@ -79,4 +80,24 @@ public class Task extends PersistentEntity {
     	return EntityManager.getInstance().getDs().find(Task.class, "id", id).get();
     }
 
+    public static List<Task> findByProduct(String productID){
+        return null;
+    }
+
+    public static List<Task> findByUserAndProduct(String userID, String productID){
+        return null;
+    }
+
+    public static List<Task> findAll(){
+        return EntityManager.getInstance().getDs().find(Task.class).asList();
+    }
+
+    public Task persist() {
+        EntityManager.getInstance().persist(this);
+        return this;
+    }
+
+    public void remove() {
+        EntityManager.getInstance().getDs().delete(this);
+    }
 }

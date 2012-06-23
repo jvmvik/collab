@@ -84,10 +84,13 @@ public abstract class AbstractNimbusEditor<T extends BaseProxy> extends Composit
 	}
 
 	public void setEditMode(EditorMode editorMode) {
-		if (editorMode == EditorMode.EDIT || editorMode == EditorMode.CREATE) {
+		if (editorMode == EditorMode.EDIT || editorMode == EditorMode.CREATE)
+        {
 			editorDriver.edit(this.cachedObject, this.cachedRequestContext);
 			removeStyleName("readOnly");
-		} else if (editorMode == EditorMode.VIEW) {
+		}
+        else if (editorMode == EditorMode.VIEW)
+        {
 			editorDriver.display(this.cachedObject);
 			addStyleName("readOnly");
 		}
@@ -105,6 +108,7 @@ public abstract class AbstractNimbusEditor<T extends BaseProxy> extends Composit
 
 		for (Widget w : pathToFieldMap.values())
 			w.removeStyleName("errorWidget");
+
 		notifyErrorsCleared();
 	}
 

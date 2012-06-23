@@ -22,7 +22,7 @@
 				<b:ControlGroup>
 					<b:ControlLabel for="status">Status</b:ControlLabel>
 					<b:Controls>
-						<b:TextBox ui:field="status"></b:TextBox>
+						<b:TextBox ui:field="status"> </b:TextBox>
 					</b:Controls>
 				</b:ControlGroup>
 

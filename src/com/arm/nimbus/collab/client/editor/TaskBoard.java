@@ -12,18 +12,20 @@ import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellList;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.view.client.HasData;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SelectionChangeEvent.Handler;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.google.inject.Inject;
 
-public class TaskBoard extends Composite {
+public class TaskBoard extends Composite implements TaskBoardView{
 
 	private static TaskBoardUiBinder uiBinder = GWT
 			.create(TaskBoardUiBinder.class);
 
-	interface TaskBoardUiBinder extends UiBinder<Widget, TaskBoard> {
+    interface TaskBoardUiBinder extends UiBinder<Widget, TaskBoard> {
 	}
 
 	@Inject
@@ -36,18 +38,29 @@ public class TaskBoard extends Composite {
 	
 	public TaskBoard() {
 		initWidget(uiBinder.createAndBindUi(this));
-		
+
+        // Link eventBus
+       // editor.setEventBus(eventBus);
+
+        // Capture list selection event
 		final SingleSelectionModel<TaskProxy> selectionModel = new SingleSelectionModel<TaskProxy>();
 		selectionModel.addSelectionChangeHandler(new Handler() {
 			
 			@Override
 			public void onSelectionChange(SelectionChangeEvent event) {
 				TaskProxy entityProxy = (TaskProxy)selectionModel.getSelectedObject();
+                if(entityProxy != null){
+                    editor.setVisible(true);
+                    editor.setInput(entityProxy, getRequestFactory(eventBus).taskRequest(), EditorMode.EDIT, placeController);;
+                }else{
+                    editor.setVisible(false);
+                }
                 GWT.log("Select : " + entityProxy.getTitle());
-                editor.setInput(entityProxy, getRequestFactory(eventBus).taskRequest(), EditorMode.EDIT, placeController);
+
 			}
 		});
 		list.setSelectionModel(selectionModel);
+        list.setEmptyListWidget(new HTML("No task found"));
 	}
 
 	@UiField
@@ -60,7 +73,6 @@ public class TaskBoard extends Composite {
 		return new CellList<TaskProxy>(ttc);
 	}
 	
-	
 	@UiField
 	TaskEditor editor;
 
@@ -71,5 +83,11 @@ public class TaskBoard extends Composite {
 	         }
 	        return rf;
 	}
+
+
+    @Override
+    public HasData<TaskProxy> list() {
+        return list;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 
 }

@@ -28,7 +28,7 @@ public class TaskBoardPlace extends ApplicationPlace {
 		@Override
 		public String getToken(TaskBoardPlace place) {
 			if(place == null){
-				return "";
+				return "taskboard";
 			}
 			return place.getProductID();
 		}
