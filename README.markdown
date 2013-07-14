@@ -3,11 +3,16 @@ Collab
 This project is a demonstration simplified data exchanged between server and client.
 I'm using a straightforward JSON to persist the client object into the db.
 
+Development stopped before a first alpha release.
+This application is an example about how tricky it is to develop an application with GWT.
+The GWT stack is pretty complex to manage. I do not think it is a good match for building "simple application".
+I would rather use HTML5 + Knockout.js + Java7 backend to build a good web application.
+
 Goals
 -------
  - 50% test coverage on the client.
  - 100% test coverage on the server.
- - write the application with ORM and without ORM
+ - Write the application with ORM and without ORM
 
 Technologies
 -------
