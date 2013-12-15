@@ -3,8 +3,13 @@ Collab
 This project is a demonstration simplified data exchanged between server and client.
 I'm using a straightforward JSON to persist the client object into the db.
 
-Development stopped before a first alpha release.
-This application is an example about how tricky it is to develop an application with GWT.
+Status
+-----
+Dead, to be removed ..
+
+Development stopped before a first alpha release, because of time and priority changes...
+
+This application demonstrates how tricky it is to develop an application with GWT.
 The GWT stack is pretty complex to manage. I do not think it is a good match for building "simple application".
 I would rather use HTML5 + Knockout.js + Java7 backend to build a good web application.
 
